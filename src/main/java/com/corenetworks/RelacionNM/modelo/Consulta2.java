@@ -13,8 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="consultas")
-public class Consulta {
+@Table(name="consultas2")
+public class Consulta2 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idConsulta;
@@ -23,11 +23,6 @@ public class Consulta {
     @Column(nullable = false)
     private LocalDate fecha;
 
-    @ManyToMany
-    @JoinTable(name="consultas_analiticas",
-    joinColumns = @JoinColumn(name = "id_consulta",referencedColumnName ="idConsulta"),
-    inverseJoinColumns  =@JoinColumn(name="id_analitica", referencedColumnName = "idAnalitica")
-    )
-    private List<Analitica> analiticas;
+
 
 }
